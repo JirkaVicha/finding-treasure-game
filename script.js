@@ -9,20 +9,27 @@ var getRandomNumber = function (size) {
     var diffY = event.offsetY - target.y;
     return Math.sqrt((diffX * diffY) + (diffY * diffY));
   };
+
+  // reload the page to start new game
+  var newGame = function () {
+    $("#new-game").text("Play Again? Click Me.").click(function () {
+      location.reload();
+    })
+  };
   
   // telling the player how close they are
   var getDistanceHint = function (distance) {
-    if (distance < 20) {
+    if (distance < 30) {
       return "Boiling hot!";
-    } else if (distance < 40) {
+    } else if (distance < 50) {
       return "Really hot!";
-    } else if (distance < 80) {
+    } else if (distance < 100) {
       return "Hot";
     } else if (distance < 180) {
       return "Warm";
     } else if (distance < 260) {
       return "Cold";
-    } else if (distance < 420) {
+    } else if (distance < 450) {
       return "Really cold";
     } else {
       return "Freezing!";
@@ -30,10 +37,10 @@ var getRandomNumber = function (size) {
   };
   
   // setting the treasure coordinates
-  var width = 500;
-  var height = 500;
+  var width = 450;
+  var height = 450;
   var clicks = 0;
-  var attempts = 20;
+  var attempts = 10;
   
   // setting the target
   var target = {
@@ -54,16 +61,20 @@ var getRandomNumber = function (size) {
     // checking if the player won
     if (distance < 10) {
       $("#distance").text("YOU FOUND IT in " + clicks + " clicks!!!");
+      document.querySelector(".container").style.backgroundColor = 'green';
       //alert("YOU WIN!! Found the treasure in " + clicks + " clicks!");
+      newGame();
     }
     // set the maximum of click to 20, this means game over
-    if (clicks === 20) {
+    if (clicks === 10) {
       $("#distance").text("NO..GAME OVER!!");
+      document.querySelector(".container").style.backgroundColor = 'red';
       //alert("Sorry, you didn't find the treasure!!");
+      newGame();
     } 
   });
-  
-  
+
+ 
   
   
   
