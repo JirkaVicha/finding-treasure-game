@@ -29,6 +29,7 @@ body {
 .rules {
     color: orangered;
     font-size: 0.6em;
+    text-align: center;
 }
 
 #distance {

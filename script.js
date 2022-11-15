@@ -19,17 +19,17 @@ var getRandomNumber = function (size) {
   
   // telling the player how close they are
   var getDistanceHint = function (distance) {
-    if (distance < 30) {
+    if (distance < 20) {
       return "Boiling hot!";
-    } else if (distance < 50) {
+    } else if (distance < 40) {
       return "Really hot!";
-    } else if (distance < 100) {
+    } else if (distance < 80) {
       return "Hot";
-    } else if (distance < 180) {
+    } else if (distance < 160) {
       return "Warm";
-    } else if (distance < 260) {
+    } else if (distance < 240) {
       return "Cold";
-    } else if (distance < 450) {
+    } else if (distance < 360) {
       return "Really cold";
     } else {
       return "Freezing!";
@@ -37,8 +37,8 @@ var getRandomNumber = function (size) {
   };
   
   // setting the treasure coordinates
-  var width = 450;
-  var height = 450;
+  var width = 400;
+  var height = 400;
   var clicks = 0;
   var attempts = 10;
   
@@ -66,7 +66,7 @@ var getRandomNumber = function (size) {
       newGame();
     }
     // set the maximum of click to 20, this means game over
-    if (clicks === 10) {
+    if (clicks === 12) {
       $("#distance").text("NO..GAME OVER!!");
       document.querySelector(".container").style.backgroundColor = 'red';
       //alert("Sorry, you didn't find the treasure!!");
