@@ -11,3 +11,7 @@ Bellow the picture, you will see the messages such as HIND, how close you are an
 how much clicks left.
 
 This game is on base of Great book, JavaScript for Kids, written by Nick Morgan. 
+
+Live preview:
+
+https://jirkavicha.github.io/finding-treasure-game/
